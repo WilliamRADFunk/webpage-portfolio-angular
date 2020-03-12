@@ -1,0 +1,106 @@
+.row-header
+{
+    background-color: #ffffff;
+}
+
+.row-header a
+{
+    color: #000000;
+    font-weight: lighter;
+    line-height: 34px;
+}
+
+.row-header a img
+{
+    float: left;
+}
+
+.row-header img,
+.row-body img
+{
+    border: none;
+}
+
+.row-header span
+{
+    color: #000000;
+    float: left;
+    font-weight: bold;
+}
+
+@media (min-width: 1200px) {
+  .row-header a
+  {
+      float: left;
+      font-size: 14px;
+      line-height: 34px;
+      margin: 0 5px 0 0;
+  }
+  .row-header img
+  {
+      margin-right: 5px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .row-header a
+  {
+      float: left;
+      font-size: 14px;
+      line-height: 34px;
+      margin: 0 5px 0 0;
+  }
+  .row-header img
+  {
+      margin-right: 5px;
+  }
+}
+
+@media (max-width: 991px) {
+  .row-header a
+  {
+      float: left;
+      font-size: 12px;
+      line-height: 34px;
+      margin: 0px;
+  }
+  .row-header img
+  {
+      margin-right: 5px;
+  }
+}
+
+@media (max-width: 767px) {
+  #git-logo,
+  #pdf-logo
+  {
+      line-height: 34px !important;
+  }
+  .row-header a
+  {
+      float: left;
+      font-size: 12px;
+      line-height: 16px;
+      margin: 0px 17px;
+  }
+  .row-header img
+  {
+      margin-right: 5px;
+  }
+}
+
+@media (max-width: 540px) {
+  #pdf-logo,
+  #git-logo
+  {
+      line-height: 16px !important;
+  }
+  #git-logo img
+  {
+      padding-left: 5px;
+  }
+  #pdf-logo img
+  {
+      padding-left: 10px;
+  }
+}
