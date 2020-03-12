@@ -4,7 +4,9 @@ $enable-shadows: true;
 
 // needed so font-awesome knows where fonts are loaded from
 $fa-font-path: '~font-awesome/fonts';
-@import '~font-awesome/scss/font-awesome';
+@import '~styles/google-open-sans.css';
+
+@import '~bootstrap/scss/bootstrap.scss';
 
 body {
   font-family: "Open Sans", sans-serif;
