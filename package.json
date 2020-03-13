@@ -7,7 +7,7 @@
     "ng:build": "ng build angular-version --prod --base-href=/angular-version/",
     "ng:test": "ng test",
     "start": "run-s clean copy:assets copy:images ng:start",
-    "build": "run-s clean copy:configs copy:assets copy:images ng:build",
+    "build": "run-s clean copy:assets copy:images ng:build copy:configs",
     "test": "run-s clean copy:assets copy:images ng:test",
     "lint": "ng lint",
     "e2e": "ng e2e",
