@@ -1,46 +1,52 @@
 
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <button class="navbar-toggler" (click)="toggleCollapseState()" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-  <div class="collapse navbar-collapse" id="navbarNavDropdown" [ngClass]="{'show': showState}">
-    <ul class="navbar-nav" (click)="mobileCollapseState()">
-      <li><a href="#about" onclick="jumpTo()">About</a></li>
-      <li><a href="#projects" onclick="jumpTo()">Projects</a></li>
-      <li class="dropdown"><a href="#" data-toggle="dropdown">Code <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="https://github.com/WilliamRADFunk/sudoku" target="_blank">SuDoKu ExTrEmE</a></li>
-          <li><a href="https://github.com/WilliamRADFunk/planet-funk" target="_blank">Planet Funk</a></li>
-          <li><a href="https://github.com/WilliamRADFunk/irl-reporting-site" target="_blank">Sense The IRL - Front End</a></li>
-          <li><a href="https://github.com/WilliamRADFunk/irl-reporting-rest" target="_blank">Sense The IRL - Back End</a></li>
-          <li><a href="https://github.com/WilliamRADFunk/stay-in-the-light" target="_blank">Stay in the Light</a></li>
-          <li><a href="https://github.com/WilliamRADFunk/galactic-fighter" target="_blank">Galactic Fighter</a></li>
-          <li><a href="https://github.com/WilliamRADFunk/cinema-tycoon" target="_blank">Cinema Tycoon</a></li>
-          <li><a href="https://github.com/WilliamRADFunk/study-hall" target="_blank">Event Note</a></li>
-          <li><a href="https://youtu.be/DStHPVL2SAE" target="_blank">Horseshoe Sweepstakes</a></li>
-          <li><a href="https://github.com/WilliamRADFunk/vedic-site" target="_blank">Vedicode</a></li>
-          <li><a href="https://github.com/WilliamRADFunk/vedic" target="_blank">V.E.D.I.C.</a></li>
-          <li><a href="https://github.com/WilliamRADFunk/phood-buddy" target="_blank">Phood Buddy</a></li>
-          <li><a href="https://github.com/WilliamRADFunk/planetary-defense/commits/master" target="_blank">Planetary Defense</a></li>
-          <li><a href="https://github.com/WilliamRADFunk/hack-bauer-codebreaker" target="_blank">Hack Bauer: Codebreaker</a></li>
-          <li><a href="https://github.com/WilliamRADFunk/two-tier_client-server_application" target="_blank">Two-Tiered Client-Server App</a></li>
-          <li><a href="https://github.com/WilliamRADFunk/financial-tracking-repository/commits/master" target="_blank">Financial-Tracking-Repository</a></li>
-          <li><a href="#projects" onclick="jumpTo(); changeActiveListElem('2');">Content Alert</a></li>
-          <li><a href="https://github.com/WilliamRADFunk/fake-bank" target="_blank">Fake-Bank</a></li>
-          <li><a href="https://github.com/WilliamRADFunk/bookstore" target="_blank">Bookstore</a></li>
-          <li><a href="https://github.com/WilliamRADFunk/the-cabal-effect/commits/master" target="_blank">The Cabal Effect</a></li>
-          <li><a href="https://github.com/WilliamRADFunk/siege-warfare" target="_blank">Siege Warfare</a></li>
-          <li><a href="https://www.npmjs.com/package/colors-plus" target="_blank">NPM Colors-Plus</a></li>
-          <li><a href="#projects" onclick="jumpTo()">Trig Driver</a></li>
-          <li><a href="https://github.com/WilliamRADFunk/encryptor" target="_blank">The Encryptor</a></li>
-          <li><a href="https://github.com/WilliamRADFunk/pong-3D" target="_blank">Pong 3D</a></li>
-          <li><a href="https://github.com/WilliamRADFunk/tictactoe3D" target="_blank">TicTacToe 3D</a></li>
-          <li><a href="https://github.com/WilliamRADFunk/tictactoe2D-AIOpponent" target="_blank">TicTacToe 2D</a></li>
-          <li><a href="https://github.com/WilliamRADFunk/total-recall" target="_blank">Total-Recall</a></li>
-          <li><a href="#projects" onclick="jumpTo()">Q-Fish</a></li>
-          <li><a href="https://github.com/WilliamRADFunk/cinema-guru">Cinema-Guru</a></li>
+  <div class="row no-gutters w-100">
+    <div class=" col-12 col-lg-10 offset-lg-1">
+      <button class="navbar-toggler" (click)="toggleCollapseState()" type="button" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" [ngClass]="{'show': showState}">
+        <ul class="navbar-nav">
+          <li class="nav-item" (click)="mobileCollapseState()"><a class="nav-link" href="#about" onclick="jumpTo()">About</a></li>
+          <li class="nav-item" (click)="mobileCollapseState()"><a class="nav-link" href="#projects" onclick="jumpTo()">Projects</a></li>
+          <li class="nav-item dropdown" ngbDropdown #mainDropdown="ngbDropdown">
+            <span class="nav-link" ngbDropdownToggle>Code</span>
+            <div class="w-100" ngbDropdownMenu aria-labelledby="dropdownManual" style="min-width: 300px;">
+              <div ngbDropdownItem><a href="https://github.com/WilliamRADFunk/sudoku" target="_blank">SuDoKu ExTrEmE</a></div>
+              <div ngbDropdownItem><a href="https://github.com/WilliamRADFunk/planet-funk" target="_blank">Planet Funk</a></div>
+              <div ngbDropdownItem><a href="https://github.com/WilliamRADFunk/irl-reporting-site" target="_blank">Sense The IRL - Front End</a></div>
+              <div ngbDropdownItem><a href="https://github.com/WilliamRADFunk/irl-reporting-rest" target="_blank">Sense The IRL - Back End</a></div>
+              <div ngbDropdownItem><a href="https://github.com/WilliamRADFunk/stay-in-the-light" target="_blank">Stay in the Light</a></div>
+              <div ngbDropdownItem><a href="https://github.com/WilliamRADFunk/galactic-fighter" target="_blank">Galactic Fighter</a></div>
+              <div ngbDropdownItem><a href="https://github.com/WilliamRADFunk/cinema-tycoon" target="_blank">Cinema Tycoon</a></div>
+              <div ngbDropdownItem><a href="https://github.com/WilliamRADFunk/study-hall" target="_blank">Event Note</a></div>
+              <div ngbDropdownItem><a href="https://youtu.be/DStHPVL2SAE" target="_blank">Horseshoe Sweepstakes</a></div>
+              <div ngbDropdownItem><a href="https://github.com/WilliamRADFunk/vedic-site" target="_blank">Vedicode</a></div>
+              <div ngbDropdownItem><a href="https://github.com/WilliamRADFunk/vedic" target="_blank">V.E.D.I.C.</a></div>
+              <div ngbDropdownItem><a href="https://github.com/WilliamRADFunk/phood-buddy" target="_blank">Phood Buddy</a></div>
+              <div ngbDropdownItem><a href="https://github.com/WilliamRADFunk/planetary-defense/commits/master" target="_blank">Planetary Defense</a></div>
+              <div ngbDropdownItem><a href="https://github.com/WilliamRADFunk/hack-bauer-codebreaker" target="_blank">Hack Bauer: Codebreaker</a></div>
+              <div ngbDropdownItem><a href="https://github.com/WilliamRADFunk/two-tier_client-server_application" target="_blank">Two-Tiered Client-Server App</a></div>
+              <div ngbDropdownItem><a href="https://github.com/WilliamRADFunk/financial-tracking-repository/commits/master" target="_blank">Financial-Tracking-Repository</a></div>
+              <div ngbDropdownItem><a href="#projects" onclick="jumpTo(); changeActiveListElem('2');">Content Alert</a></div>
+              <div ngbDropdownItem><a href="https://github.com/WilliamRADFunk/fake-bank" target="_blank">Fake-Bank</a></div>
+              <div ngbDropdownItem><a href="https://github.com/WilliamRADFunk/bookstore" target="_blank">Bookstore</a></div>
+              <div ngbDropdownItem><a href="https://github.com/WilliamRADFunk/the-cabal-effect/commits/master" target="_blank">The Cabal Effect</a></div>
+              <div ngbDropdownItem><a href="https://github.com/WilliamRADFunk/siege-warfare" target="_blank">Siege Warfare</a></div>
+              <div ngbDropdownItem><a href="https://www.npmjs.com/package/colors-plus" target="_blank">NPM Colors-Plus</a></div>
+              <div ngbDropdownItem><a href="#projects" onclick="jumpTo()">Trig Driver</a></div>
+              <div ngbDropdownItem><a href="https://github.com/WilliamRADFunk/encryptor" target="_blank">The Encryptor</a></div>
+              <div ngbDropdownItem><a href="https://github.com/WilliamRADFunk/pong-3D" target="_blank">Pong 3D</a></div>
+              <div ngbDropdownItem><a href="https://github.com/WilliamRADFunk/tictactoe3D" target="_blank">TicTacToe 3D</a></div>
+              <div ngbDropdownItem><a href="https://github.com/WilliamRADFunk/tictactoe2D-AIOpponent" target="_blank">TicTacToe 2D</a></div>
+              <div ngbDropdownItem><a href="https://github.com/WilliamRADFunk/total-recall" target="_blank">Total-Recall</a></div>
+              <div ngbDropdownItem><a href="#projects" onclick="jumpTo()">Q-Fish</a></div>
+              <div ngbDropdownItem><a href="https://github.com/WilliamRADFunk/cinema-guru">Cinema-Guru</a></div>
+            </div>
+          </li>
+          <li class="nav-item" (click)="mobileCollapseState()"><a class="nav-link" href="#work" onclick="jumpTo()">Work Experience</a></li>
+          <li class="nav-item" (click)="mobileCollapseState()"><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
-      </li>
-      <li><a href="#work" onclick="jumpTo()">Work Experience</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+      </div>
+    </div>
   </div>
 </nav>
