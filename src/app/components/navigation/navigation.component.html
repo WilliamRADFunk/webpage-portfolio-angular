@@ -3,9 +3,9 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="row no-gutters w-100">
     <div class=" col-12 col-lg-10 offset-lg-1">
-      <button class="navbar-toggler" (click)="toggleCollapseState()" type="button" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <button class="navbar-toggler float-right" (click)="toggleCollapseState()" type="button" data-toggle="collapse" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
       <div class="collapse navbar-collapse" [ngClass]="{'show': showState}">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav mt-5 w-100">
           <li class="nav-item" (click)="mobileCollapseState()"><a class="nav-link" href="#about" onclick="jumpTo()">About</a></li>
           <li class="nav-item" (click)="mobileCollapseState()"><a class="nav-link" href="#projects" onclick="jumpTo()">Projects</a></li>
           <li class="nav-item dropdown" ngbDropdown #mainDropdown="ngbDropdown">
