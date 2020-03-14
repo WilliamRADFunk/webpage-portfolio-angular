@@ -6,12 +6,14 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { HeaderContentComponent } from './components/header-content/header-content.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
+import { MissionSectionComponent } from './components/mission-section/mission-section.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderContentComponent,
-    NavigationComponent
+    NavigationComponent,
+    MissionSectionComponent
   ],
   imports: [
     BrowserModule,

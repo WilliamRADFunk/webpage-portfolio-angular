@@ -1,0 +1,81 @@
+#mission .btn.btn-danger {
+  background: #99ff99 linear-gradient(180deg, #7AD95F, #99ff99) repeat-x;
+  border: none;
+}
+
+#mission .btn.btn-danger:hover {
+  background: #7AD95F linear-gradient(180deg, #99ff99, #7AD95F) repeat-x;
+  border: none;
+  color: #FFFFFF !important;
+}
+
+#mission .btn.btn-danger:active,
+#mission .btn.btn-danger:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+h4 {
+    color: #99ff99;
+    padding-top: 0px;
+}
+
+h5 {
+  font-size: 16px;
+}
+
+p {
+    margin-top: 15px;
+}
+
+@media (min-width: 1200px) {
+  h4 {
+    padding-top: 0px;
+  }
+
+  p {
+    line-height: 34px;
+  }
+}
+
+@media (max-width: 1199px) {
+  h4 {
+    padding-top: 0px;
+  }
+
+  p {
+    line-height: 30px;
+  }
+}
+
+@media (max-width: 991px) {
+  .btn.btn-danger {
+    margin-bottom: 25px;
+  }
+
+  h4 {
+    font-size: 24px;
+    margin-bottom: 25px;
+    padding-top: 0px;
+  }
+
+  p {
+    line-height: 28px;
+  }
+}
+
+@media (max-width: 767px) {
+  h4 {
+    font-size: 20px;
+    margin-bottom: 25px;
+    padding-top: 0px;
+  }
+
+  h5 {
+    margin-bottom: 25px;
+  }
+
+  p {
+    line-height: 24px;
+  }
+}
