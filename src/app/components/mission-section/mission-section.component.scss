@@ -1,6 +1,7 @@
 #mission .btn.btn-danger {
   background: #99ff99 linear-gradient(180deg, #7AD95F, #99ff99) repeat-x;
   border: none;
+  white-space: nowrap;
 }
 
 #mission .btn.btn-danger:hover {
@@ -16,8 +17,8 @@
 }
 
 h4 {
-    color: #99ff99;
-    padding-top: 0px;
+  color: #99ff99;
+  padding-top: 0px;
 }
 
 h5 {
@@ -25,7 +26,7 @@ h5 {
 }
 
 p {
-    margin-top: 15px;
+  margin-top: 15px;
 }
 
 @media (min-width: 1200px) {
@@ -35,6 +36,10 @@ p {
 
   p {
     line-height: 34px;
+  }
+
+  .btn.btn-danger {
+    font-size: 19px;
   }
 }
 

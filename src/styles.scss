@@ -13,7 +13,7 @@ body {
   font-family: "Open Sans", sans-serif;
   font-size: 24px;
   font-weight: 500;
-  padding: 0px;
+  padding-top: 182px;
 }
 
 a {
@@ -191,7 +191,8 @@ ol {
 
 @media (max-width: 767px) {
   body {
-      font-size: 14px;
+    font-size: 14px;
+    padding-top: 182px;
   }
 
   footer a {
