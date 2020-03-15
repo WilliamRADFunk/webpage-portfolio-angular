@@ -9,6 +9,7 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { MissionSectionComponent } from './components/mission-section/mission-section.component';
 import { AboutSectionComponent } from './components/about-section/about-section.component';
 import { SectionHeaderComponent } from './components/section-header/section-header.component';
+import { WorkSectionComponent } from './components/work-section/work-section.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { SectionHeaderComponent } from './components/section-header/section-head
     NavigationComponent,
     MissionSectionComponent,
     AboutSectionComponent,
-    SectionHeaderComponent
+    SectionHeaderComponent,
+    WorkSectionComponent
   ],
   imports: [
     BrowserModule,
