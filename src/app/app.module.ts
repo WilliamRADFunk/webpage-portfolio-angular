@@ -10,6 +10,8 @@ import { MissionSectionComponent } from './components/mission-section/mission-se
 import { AboutSectionComponent } from './components/about-section/about-section.component';
 import { SectionHeaderComponent } from './components/section-header/section-header.component';
 import { WorkSectionComponent } from './components/work-section/work-section.component';
+import { ProjectsSectionComponent } from './components/projects-section/projects-section.component';
+import { ContactSectionComponent } from './components/contact-section/contact-section.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { WorkSectionComponent } from './components/work-section/work-section.com
     MissionSectionComponent,
     AboutSectionComponent,
     SectionHeaderComponent,
-    WorkSectionComponent
+    WorkSectionComponent,
+    ProjectsSectionComponent,
+    ContactSectionComponent
   ],
   imports: [
     BrowserModule,

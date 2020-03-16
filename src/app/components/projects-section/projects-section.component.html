@@ -1,0 +1,24 @@
+<div class="row no-gutters alternate-color py-4">
+  <div class="offset-1 col-10">
+    <div class="panel-group" id="accordion-projects">
+      <div class="div-inline">
+        <div class="form-group">
+          <label class="sr-only" for="tag-search">Search by keywords (any match): </label>
+          <div class="input-group">
+            <div class="input-group-addon">Keywords (any match): </div>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="ie. game, angular, pixijs"
+              aria-label="game, angular, pixijs"
+              aria-describedby="tag-search"
+              id="tag-search"
+              oninput="changeActiveListElem(value); return false;"
+              value="game, angular, pixijs"/>
+          </div>
+        </div>
+      </div>
+      <div id="myProjects" class="panel panel-default"></div>
+    </div>
+  </div>
+</div>

@@ -1,11 +1,11 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav id="main-nav" class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="row no-gutters w-100">
     <div class=" col-12 col-lg-10 offset-lg-1">
       <button class="navbar-toggler float-right" (click)="toggleCollapseState()" type="button" data-toggle="collapse" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
       <div class="collapse navbar-collapse" [ngClass]="{'show': showState}">
         <ul class="navbar-nav w-100">
-          <li class="nav-item" (click)="mobileCollapseState()"><a class="nav-link" href="#about" onclick="jumpTo()">About</a></li>
-          <li class="nav-item" (click)="mobileCollapseState()"><a class="nav-link" href="#projects" onclick="jumpTo()">Projects</a></li>
+          <li class="nav-item" (click)="mobileCollapseState(); jumpTo();"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item" (click)="mobileCollapseState(); jumpTo();"><a class="nav-link" href="#projects">Projects</a></li>
           <li class="nav-item dropdown" ngbDropdown #mainDropdown="ngbDropdown">
             <span class="nav-link" ngbDropdownToggle>Code</span>
             <div class="w-100" ngbDropdownMenu aria-labelledby="dropdownManual" style="min-width: 300px;">
@@ -25,23 +25,23 @@
               <div ngbDropdownItem><a href="https://github.com/WilliamRADFunk/hack-bauer-codebreaker" target="_blank">Hack Bauer: Codebreaker</a></div>
               <div ngbDropdownItem><a href="https://github.com/WilliamRADFunk/two-tier_client-server_application" target="_blank">Two-Tiered Client-Server App</a></div>
               <div ngbDropdownItem><a href="https://github.com/WilliamRADFunk/financial-tracking-repository/commits/master" target="_blank">Financial-Tracking-Repository</a></div>
-              <div ngbDropdownItem><a href="#projects" onclick="jumpTo(); changeActiveListElem('2');">Content Alert</a></div>
+              <div ngbDropdownItem><a href="#projects" (click)="jumpTo();">Content Alert</a></div>
               <div ngbDropdownItem><a href="https://github.com/WilliamRADFunk/fake-bank" target="_blank">Fake-Bank</a></div>
               <div ngbDropdownItem><a href="https://github.com/WilliamRADFunk/bookstore" target="_blank">Bookstore</a></div>
               <div ngbDropdownItem><a href="https://github.com/WilliamRADFunk/the-cabal-effect/commits/master" target="_blank">The Cabal Effect</a></div>
               <div ngbDropdownItem><a href="https://github.com/WilliamRADFunk/siege-warfare" target="_blank">Siege Warfare</a></div>
               <div ngbDropdownItem><a href="https://www.npmjs.com/package/colors-plus" target="_blank">NPM Colors-Plus</a></div>
-              <div ngbDropdownItem><a href="#projects" onclick="jumpTo()">Trig Driver</a></div>
+              <div ngbDropdownItem><a href="#projects" (click)="jumpTo();">Trig Driver</a></div>
               <div ngbDropdownItem><a href="https://github.com/WilliamRADFunk/encryptor" target="_blank">The Encryptor</a></div>
               <div ngbDropdownItem><a href="https://github.com/WilliamRADFunk/pong-3D" target="_blank">Pong 3D</a></div>
               <div ngbDropdownItem><a href="https://github.com/WilliamRADFunk/tictactoe3D" target="_blank">TicTacToe 3D</a></div>
               <div ngbDropdownItem><a href="https://github.com/WilliamRADFunk/tictactoe2D-AIOpponent" target="_blank">TicTacToe 2D</a></div>
               <div ngbDropdownItem><a href="https://github.com/WilliamRADFunk/total-recall" target="_blank">Total-Recall</a></div>
-              <div ngbDropdownItem><a href="#projects" onclick="jumpTo()">Q-Fish</a></div>
+              <div ngbDropdownItem><a href="#projects" (click)="jumpTo();">Q-Fish</a></div>
               <div ngbDropdownItem><a href="https://github.com/WilliamRADFunk/cinema-guru">Cinema-Guru</a></div>
             </div>
           </li>
-          <li class="nav-item" (click)="mobileCollapseState()"><a class="nav-link" href="#work" onclick="jumpTo()">Work Experience</a></li>
+          <li class="nav-item" (click)="mobileCollapseState(); jumpTo();"><a class="nav-link" href="#work">Work Experience</a></li>
           <li class="nav-item" (click)="mobileCollapseState()"><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
       </div>
