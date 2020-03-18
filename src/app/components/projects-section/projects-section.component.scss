@@ -25,3 +25,6 @@
       color: #FFFFFF;
     }
 }
+::ng-deep#projects-by-tags .accordion > .card > .card-header {
+  padding: 0;
+}

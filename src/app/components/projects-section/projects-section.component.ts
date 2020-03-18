@@ -5,6 +5,7 @@ import { Subscription, interval } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
 
 import { applications } from '../../../assets/base/categories.js';
+import { jumpTo } from 'src/app/utils/jump-to.js';
 
 @Component({
   selector: 'app-projects-section',
@@ -18,7 +19,13 @@ export class ProjectsSectionComponent implements OnDestroy, OnInit {
   private readonly _subs: Subscription[] = [];
 
   public activeId: string = '';
-  public filteredApplications: { html: string; name: string; tags: string[], year: number; }[] = applications;
+  public filteredApplications: {
+    carouselId: string;
+    html: string;
+    id: string;
+    name: string;
+    tags: string[],
+    year: number; }[] = applications;
   public search: FormControl = new FormControl('game, angular, pixijs');
 
   constructor() { }
@@ -69,9 +76,25 @@ export class ProjectsSectionComponent implements OnDestroy, OnInit {
     this.filteredApplications = matches;
   }
 
+  /**
+   * Sets the position of the page to the top of the anchored tag,
+   * taking into account the header and navigation bar.
+   */
+  public jumpTo() {
+    jumpTo();
+  }
+
   public toggleAccordian(e: { panelId: string }): void {
     this.activeId = e.panelId;
     console.log('event', e);
+  }
+
+  public setPanelToTop(id: string) {
+    setTimeout(() => {
+      const offset = document.getElementById(id).getBoundingClientRect();
+      window.scrollBy(0, offset.top);
+      jumpTo();
+    }, 100);
   }
 
 }

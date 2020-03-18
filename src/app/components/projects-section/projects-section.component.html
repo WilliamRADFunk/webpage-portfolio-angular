@@ -15,16 +15,59 @@
     </div>
     <ng-container *ngIf="filteredApplications.length; else noMatches">
       <ngb-accordion #a1="ngbAccordion" [activeIds]="activeId" (panelChange)="toggleAccordian($event)">
-        <ngb-panel *ngFor="let app of filteredApplications;" id="{{ app.name }}">
+        <ngb-panel *ngFor="let app of filteredApplications;" id="{{ app.id }}">
           <ng-template ngbPanelHeader>
-            <div class="d-flex align-items-center justify-content-between">
+            <div
+              id="{{app.id}}-header"
+              class="d-flex align-items-center justify-content-between"
+              (click)="setPanelToTop(app.id + '-header')">
               <button ngbPanelToggle class="btn btn-link container-fluid text-center pl-0 text-decoration-none">{{ app.name }}</button>
             </div>
           </ng-template>
           <ng-template ngbPanelContent>
             <div class="card-body">
-              <div class="card-title">
-
+              <div class="col-12 col-sm-6 col-sm-offset-1 pull-right">
+                <!-- Carousel for screenshots -->
+                <div id="{{app.carouselId}}" class="carousel slide" data-ride="carousel" data-interval="1500">
+                  <!-- Indicators -->
+                  <ol class='carousel-indicators'>
+                    <li [attr.data-target]="app.carouselId" data-slide-to="0" class="active"></li>
+                    <li [attr.data-target]="app.carouselId" data-slide-to="1"></li>
+                    <li [attr.data-target]="app.carouselId" data-slide-to="2"></li>
+                    <li [attr.data-target]="app.carouselId" data-slide-to="3"></li>
+                    <li [attr.data-target]="app.carouselId" data-slide-to="4"></li>
+                    <li [attr.data-target]="app.carouselId" data-slide-to="5"></li>
+                  </ol>
+                  <!-- Wrapper for slides -->
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img src="assets/base/{{app.id}}-screenshot-01.png" alt="{{app.name}} - Screenshot" class="img-responsive img-rounded centered">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="assets/base/{{app.id}}-screenshot-02.png" alt="{{app.name}} - Screenshot" class="img-responsive img-rounded centered">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="assets/base/{{app.id}}-screenshot-03.png" alt="{{app.name}} - Screenshot" class="img-responsive img-rounded centered">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="assets/base/{{app.id}}-screenshot-04.png" alt="{{app.name}} - Screenshot" class="img-responsive img-rounded centered">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="assets/base/{{app.id}}-screenshot-05.png" alt="{{app.name}} - Screenshot" class="img-responsive img-rounded centered">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="assets/base/{{app.id}}-screenshot-06.png" alt="{{app.name}} - Screenshot" class="img-responsive img-rounded centered">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-5">
+                <h4>SuDoKu ExTrEmE <span>(03/2019)</span></h4>
+                <h5>-- HTML5, SASS, TypeScript, Angular, &amp; Karma/Jasmine --</h5>
+                <p>Sudoku with a twist; pyramid stacks of interconnected sudoku boards.</p>
+                <p>Uses Angular 7 and a backtracking algorithm to randomly generate as many as thousands of interconnected
+                "sudoku boards with save and load functionality built in.</p>
+                <a href="https://tenaciousteal.com/games/{{app.id}}/" target="_blank" class="btn btn-danger">Click to play this game <span class="fa fa-circle-arrow-right"></span></a>
               </div>
             </div>
           </ng-template>
