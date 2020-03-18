@@ -1,0 +1,27 @@
+::ng-deep#projects-by-tags .accordion > .card {
+    background-color: #DBE9EC;
+    border: 1px solid #CCCCCC;
+
+    button {
+      color: #175480;
+    }
+
+    .card-body {
+      background-color: #FFFFFF;
+    }
+}
+
+::ng-deep#projects-by-tags .accordion > .card:first-child {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+::ng-deep#projects-by-tags .accordion > .card:hover
+{
+    background-color: #31576E;
+    text-decoration: none;
+
+    button {
+      color: #FFFFFF;
+    }
+}

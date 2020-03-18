@@ -1,9 +1,9 @@
-<div class="row no-gutters py-4">
-  <div class="offset-1 col-10">
+<div id="projects-by-tags" class="row no-gutters py-4">
+  <div class="offset-2 col-8">
     <div class="input-group mb-3">
       <label class="sr-only" for="tag-search">Search by keywords (any match): </label>
       <div class="input-group-prepend">
-        <span class="input-group-text" id="tag-search">Keywords (any match): </span>
+        <span class="input-group-text rounded-left" id="tag-search">Keywords (any match): </span>
       </div>
       <input
         type="text"
@@ -11,24 +11,29 @@
         placeholder="ie. game, angular, pixijs"
         aria-label="game, angular, pixijs"
         aria-describedby="tag-search"
-        value="game, angular, pixijs"/>
-        <!-- oninput="changeActiveListElem(value); return false;" -->
+        [formControl]="search"/>
     </div>
-    <ngb-accordion #a1="ngbAccordion" [activeIds]="activeId" (panelChange)="toggleAccordian($event)">
-      <ngb-panel *ngFor="let app of applications;" id="{{ app.name }}">
-        <ng-template ngbPanelHeader>
-          <div class="d-flex align-items-center justify-content-between">
-            <button ngbPanelToggle class="btn btn-link container-fluid text-left pl-0 text-decoration-none">{{ app.name }}</button>
-          </div>
-        </ng-template>
-        <ng-template ngbPanelContent>
-          <div class="card-body">
-            <div class="card-title">
-
+    <ng-container *ngIf="filteredApplications.length; else noMatches">
+      <ngb-accordion #a1="ngbAccordion" [activeIds]="activeId" (panelChange)="toggleAccordian($event)">
+        <ngb-panel *ngFor="let app of filteredApplications;" id="{{ app.name }}">
+          <ng-template ngbPanelHeader>
+            <div class="d-flex align-items-center justify-content-between">
+              <button ngbPanelToggle class="btn btn-link container-fluid text-center pl-0 text-decoration-none">{{ app.name }}</button>
             </div>
-          </div>
-        </ng-template>
-      </ngb-panel>
-    </ngb-accordion>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            <div class="card-body">
+              <div class="card-title">
+
+              </div>
+            </div>
+          </ng-template>
+        </ngb-panel>
+      </ngb-accordion>
+    </ng-container>
   </div>
 </div>
+
+<ng-template #noMatches>
+  <div class="mt-5 text-center"><h3>There are no applications with tags that match your query.</h3></div>
+</ng-template>
