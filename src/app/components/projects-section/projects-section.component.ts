@@ -96,7 +96,6 @@ export class ProjectsSectionComponent implements OnDestroy, OnInit {
         return 1;
       }
     });
-    console.log(matches);
     this.filteredApplications = matches;
   }
 
