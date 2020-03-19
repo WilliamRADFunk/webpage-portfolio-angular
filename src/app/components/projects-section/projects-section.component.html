@@ -26,48 +26,30 @@
           </ng-template>
           <ng-template ngbPanelContent>
             <div class="card-body">
-              <div class="col-12 col-sm-6 col-sm-offset-1 pull-right">
+              <div class="col-12 col-lg-6 col-lg-offset-1 pull-right text-center">
                 <!-- Carousel for screenshots -->
-                <div id="{{app.carouselId}}" class="carousel slide" data-ride="carousel" data-interval="1500">
-                  <!-- Indicators -->
-                  <ol class='carousel-indicators'>
-                    <li [attr.data-target]="app.carouselId" data-slide-to="0" class="active"></li>
-                    <li [attr.data-target]="app.carouselId" data-slide-to="1"></li>
-                    <li [attr.data-target]="app.carouselId" data-slide-to="2"></li>
-                    <li [attr.data-target]="app.carouselId" data-slide-to="3"></li>
-                    <li [attr.data-target]="app.carouselId" data-slide-to="4"></li>
-                    <li [attr.data-target]="app.carouselId" data-slide-to="5"></li>
-                  </ol>
+                <ngb-carousel #carousel pauseOnHover=true interval="2500" class="mb-5 d-inline-block">
                   <!-- Wrapper for slides -->
-                  <div class="carousel-inner">
-                    <div class="carousel-item active">
-                      <img src="assets/base/{{app.id}}-screenshot-01.png" alt="{{app.name}} - Screenshot" class="img-responsive img-rounded centered">
-                    </div>
-                    <div class="carousel-item">
-                      <img src="assets/base/{{app.id}}-screenshot-02.png" alt="{{app.name}} - Screenshot" class="img-responsive img-rounded centered">
-                    </div>
-                    <div class="carousel-item">
-                      <img src="assets/base/{{app.id}}-screenshot-03.png" alt="{{app.name}} - Screenshot" class="img-responsive img-rounded centered">
-                    </div>
-                    <div class="carousel-item">
-                      <img src="assets/base/{{app.id}}-screenshot-04.png" alt="{{app.name}} - Screenshot" class="img-responsive img-rounded centered">
-                    </div>
-                    <div class="carousel-item">
-                      <img src="assets/base/{{app.id}}-screenshot-05.png" alt="{{app.name}} - Screenshot" class="img-responsive img-rounded centered">
-                    </div>
-                    <div class="carousel-item">
-                      <img src="assets/base/{{app.id}}-screenshot-06.png" alt="{{app.name}} - Screenshot" class="img-responsive img-rounded centered">
-                    </div>
-                  </div>
-                </div>
+                  <ng-template ngbSlide *ngFor="let img of app.images">
+                    <a href="assets/base/{{img}}" target="_blank" rel="nofollow noopener noreferrer">
+                      <div class="picsum-img-wrapper">
+                        <img src="assets/base/{{img}}" alt="{{app.name}} - Screenshot" class="rounded centered" style="max-height: 300px;">
+                      </div>
+                    </a>
+                  </ng-template>
+                </ngb-carousel>
               </div>
-              <div class="col-12 col-sm-5">
-                <h4>SuDoKu ExTrEmE <span>(03/2019)</span></h4>
-                <h5>-- HTML5, SASS, TypeScript, Angular, &amp; Karma/Jasmine --</h5>
-                <p>Sudoku with a twist; pyramid stacks of interconnected sudoku boards.</p>
-                <p>Uses Angular 7 and a backtracking algorithm to randomly generate as many as thousands of interconnected
-                "sudoku boards with save and load functionality built in.</p>
-                <a href="https://tenaciousteal.com/games/{{app.id}}/" target="_blank" class="btn btn-danger">Click to play this game <span class="fa fa-circle-arrow-right"></span></a>
+              <div class="col-12 col-lg-5">
+                <h4>{{app.name}} <span>({{ app.month }}/{{ app.year }})</span></h4>
+                <h5>{{ app.subtitle }}</h5>
+                <p *ngFor="let paragraph of app.paragraphs">{{ paragraph }}</p>
+                <a href="{{ app.linkTarget }}" target="_blank" class="btn btn-danger">{{ app.linkMessage }} <span class="fa fa-arrow-circle-o-right"></span></a>
+                <ng-container *ngIf="app.secondaryTitle">
+                  <h4 class="mt-5">{{app.secondaryTitle}} <span>({{ app.secondaryMonth }}/{{ app.secondaryYear }})</span></h4>
+                  <h5>{{ app.secondarySubtitle }}</h5>
+                  <p *ngFor="let paragraph of app.secondaryParagraphs">{{ paragraph }}</p>
+                  <a href="{{ app.secondaryLinkTarget }}" target="_blank" class="btn btn-danger">{{ app.secondaryLinkMessage }} <span class="fa fa-arrow-circle-o-right"></span></a>
+                </ng-container>
               </div>
             </div>
           </ng-template>

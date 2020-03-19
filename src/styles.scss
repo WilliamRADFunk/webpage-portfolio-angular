@@ -22,10 +22,6 @@ a {
   color: #35478C;
 }
 
-a span {
-  padding-top: 5px;
-}
-
 footer {
   padding-right: 8%;
   padding-top: 25px;
@@ -70,6 +66,12 @@ hr.row {
 
 ol {
   background-color: none;
+}
+
+span.fa.fa-arrow-circle-o-right {
+  font-size: 1.2rem;
+  height: 1.2rem;
+  vertical-align: middle;
 }
 
 .alternate-color {

@@ -8,23 +8,97 @@
 
     .card-body {
       background-color: #FFFFFF;
+      min-height: calc(300px + 3rem);
+    }
+
+    .card-header {
+      padding: 0;
+    }
+
+    &:first-child {
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+    }
+
+    &:hover {
+      background-color: #31576E;
+      text-decoration: none;
+
+      button {
+        color: #FFFFFF;
+      }
     }
 }
 
-::ng-deep#projects-by-tags .accordion > .card:first-child {
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+#projects-by-tags a.btn.btn-danger {
+  background: #74b2f0;
+  border: none;
+
+  &:hover {
+    background: #3F7EA6;
+    color: #FFFFFF;
+  }
 }
 
-::ng-deep#projects-by-tags .accordion > .card:hover
-{
-    background-color: #31576E;
-    text-decoration: none;
-
-    button {
-      color: #FFFFFF;
-    }
+h4 {
+  color: #74B2F0;
+  margin: 0px;
 }
-::ng-deep#projects-by-tags .accordion > .card > .card-header {
-  padding: 0;
+
+h4 span {
+  font-size: 20px;
+}
+
+h5 {
+  color: #282828;
+  font-weight: bold;
+  margin: 25px 0px;
+}
+
+@media (min-width: 1200px) {
+  h4 {
+    font-size: 22px;
+  }
+
+  h4 span {
+    font-size: 17px;
+  }
+
+  h5 {
+    font-size: 19px;
+  }
+}
+
+@media (max-width: 1199px) {
+  h4 {
+    font-size: 20px;
+  }
+
+  h4 span {
+    font-size: 17px;
+  }
+
+  h5 {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 991px) {
+  h4 {
+    font-size: 24px;
+  }
+
+  h5 {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 767px) {
+  h4 {
+    font-size: 23px;
+  }
+
+  h5 {
+    font-size: 14px;
+  }
 }

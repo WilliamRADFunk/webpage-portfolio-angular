@@ -1,13 +1,13 @@
 #mission .btn.btn-danger {
-  background: #99ff99 linear-gradient(180deg, #7AD95F, #99ff99) repeat-x;
+  background: #99ff99;
   border: none;
   white-space: nowrap;
-}
 
-#mission .btn.btn-danger:hover {
-  background: #7AD95F linear-gradient(180deg, #99ff99, #7AD95F) repeat-x;
-  border: none;
-  color: #FFFFFF !important;
+  &:hover {
+    background: #7AD95F;
+    border: none;
+    color: #FFFFFF;
+  }
 }
 
 #mission .btn.btn-danger:active,

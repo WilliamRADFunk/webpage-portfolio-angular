@@ -1,11 +1,14 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
-import { Subscription, interval } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
 
 import { applications } from '../../../assets/base/categories.js';
-import { jumpTo } from 'src/app/utils/jump-to.js';
+import { jumpTo } from '../../utils/jump-to.js';
+import { ProjectDetails } from '../../models/project-details.js';
+
+const INITIAL_TAGS: string = 'game, angular, pixijs';
 
 @Component({
   selector: 'app-projects-section',
@@ -19,16 +22,10 @@ export class ProjectsSectionComponent implements OnDestroy, OnInit {
   private readonly _subs: Subscription[] = [];
 
   public activeId: string = '';
-  public filteredApplications: {
-    carouselId: string;
-    html: string;
-    id: string;
-    name: string;
-    tags: string[],
-    year: number; }[] = applications;
-  public search: FormControl = new FormControl('game, angular, pixijs');
+  public filteredApplications: ProjectDetails[] = applications;
+  public search: FormControl = new FormControl(INITIAL_TAGS);
 
-  constructor() { }
+  constructor() {}
 
   /**
    * Triggered when component is destroyed, but before it's officially dead
@@ -43,6 +40,7 @@ export class ProjectsSectionComponent implements OnDestroy, OnInit {
    * Triggered when component is loaded, but before it is viewed.
    */
   ngOnInit() {
+    this.filterByTags(INITIAL_TAGS);
     this._subs.push(this.search.valueChanges
       .pipe(debounceTime(500))
       .subscribe(newVal => {

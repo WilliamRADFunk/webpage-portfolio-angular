@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { jumpTo } from 'src/app/utils/jump-to';
+
+import { jumpTo } from '../../utils/jump-to';
 
 @Component({
   selector: 'app-navigation',
