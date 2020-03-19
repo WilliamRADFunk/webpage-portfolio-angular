@@ -43,6 +43,14 @@
           </li>
           <li class="nav-item" (click)="mobileCollapseState(); jumpTo();"><a class="nav-link" href="#work">Work Experience</a></li>
           <li class="nav-item" (click)="mobileCollapseState()"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item dropdown" ngbDropdown #mainDropdown="ngbDropdown">
+            <span class="nav-link" ngbDropdownToggle>Site Versions</span>
+            <div class="w-100" ngbDropdownMenu aria-labelledby="dropdownManual" style="min-width: 300px;">
+              <div ngbDropdownItem><a href="http://www.williamrobertfunk.com" target="_self">Plain Javascript &amp; Bootstrap 3</a></div>
+              <div ngbDropdownItem class="text-success" disabled><a href="http://www.williamrobertfunk.com/angular-version" target="_self" class="text-success">Angular 8 &amp; Bootstrap 4</a></div>
+              <div ngbDropdownItem disabled class="disabled"><a href="http://www.williamrobertfunk.com/vue-version" target="_self" class="disabled">Vue &amp; Flexbox</a></div>
+            </div>
+          </li>
         </ul>
       </div>
     </div>

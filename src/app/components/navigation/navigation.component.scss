@@ -38,24 +38,28 @@
   display: none;
 }
 
-.dropdown-menu {
-  // top: 48px !important;
-}
-
 .dropdown-menu > .dropdown-item {
   padding-bottom: 0;
   padding-top: 0;
 
-  &:hover {
+  &:not(.text-success):hover {
     background: #C8C9CA linear-gradient(180deg, #C9CACB, #C8C9CA) repeat-x !important;
+    cursor: pointer;
   }
 }
 
 .dropdown-menu > div > a,
 .dropdown-menu > div > a:hover {
-  color: #333 !important;
-  padding: 3px 20px;
   font-size: 16px;
+  padding: 3px 20px;
   text-decoration: none;
   white-space: nowrap;
+
+  &:not(.text-success):not(.disabled) {
+    color: #333 !important;
+  }
+
+  &.disabled {
+    color: #CCC !important;
+  }
 }
